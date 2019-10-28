@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Refund</title>
+</head>
+<body>
+{% if error %}
+<ul>
+    {% for e in error %}
+    <li>{{e}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<h3>模拟机票退款mq消息(目前不支持两条以上退款的第二条退款)：</h3>
+<form action="" method="get">
+    <label>请输入11位erp订单号:</label>
+    <input type="text" name="order_code">
+    <input type="submit" value="提交">
+</form>
+
+</body>
+
+</html>

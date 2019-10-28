@@ -1,0 +1,38 @@
+<html >
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<p>订单{{refundMessages.0.orderId}}退款信息如下，请选择要退款项</strong></p>
+{% if refundMessages %}
+<p>共发现 {{refundMessages|length}}条退款.</p>
+<p>
+        {% for refund in refundMessages%}
+        uuid:{{refund.uuid}}<br>
+        refundId:{{refund.refundId}}<br>
+        price:{{refund.refundPrice}}<br>
+        {% endfor %}
+</p>
+<form action="" method="get">
+    <p>
+        <label>请输入要退款的refundId,并以英文逗号隔开:</label>
+        <input type="text"  name="refundIds"/>
+        <input type="hidden" name="orderId" id="orderId" value=""/>
+        <input type="submit" value="提交" onclick="button_click()">
+    </p>
+</form>
+
+{% else %}
+    <p>No refunds matched your search criteria.</p>
+{% endif %}
+<script type="text/javascript" >
+    var orderId={{refundMessages.0.orderId|safe}}
+    function button_click()
+    {
+        document.getElementById('orderId').value=orderId
+    }
+</script>
+</body>
+
+</html>

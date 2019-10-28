@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+{% if error %}
+<ul>
+    {% for e in error %}
+    <li>{{e}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<h3>模拟机票支付台账mq消息(不支持往返拆单)：</h3>
+<label>请输入11位erp订单号:</label>
+<form action="" method="get">
+    <input type="text" name="q">
+    <input type="submit" value="发送">
+</form>
+
+</body>
+
+</html>

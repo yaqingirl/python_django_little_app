@@ -1,0 +1,11 @@
+<p>You searched for:<strong>{{query}}</strong></p>
+{% if order_codes %}
+<p>Found {{order_codes|length}} order {{order_codes|pluralize}}.</p>
+<ur>
+    {% for order in order_codes%}
+    <li>{{order_codes.order_code}}</li>
+    {% endfor %}
+</ur>
+{% else %}
+    <p>No orders matched your search criteria.</p>
+{% endif %}
